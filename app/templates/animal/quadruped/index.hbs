@@ -1,0 +1,10 @@
+<ul>
+  {{#each model as |quadruped|}}
+    <li>
+      {{#link-to 'animal.quadruped.show' quadruped.type}}
+        {{quadruped.firstName}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+

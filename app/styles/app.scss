@@ -1,0 +1,52 @@
+@import "bootstrap";
+
+@mixin centerChildElement($childElement: 'div', $useFlexbox: true) {
+  @if $useFlexbox == true {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } @else {
+    position: relative;
+
+    #{$childElement} {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.breadcrumb > li + li:before {
+  content: "/\00a0";
+}
+
+.hero {
+  @include centerChildElement();
+  background: url("http://i.imgur.com/sYsqosj.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 30vh;
+  margin-bottom: 30px;
+  h1 {
+    font-size: 4em;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 20px 0;
+  font-size: 32px;
+}
+
+img {
+  margin-top: 20px;
+}
+
+.btn-group {
+  margin-bottom: 20px;
+}

@@ -1,3 +1,30 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="hero">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>
+          {{#link-to 'index'}}
+            <code>ember-crumbly</code> demo
+          {{/link-to}}
+        </h1>
+        <iframe src="https://ghbtns.com/github-btn.html?user=poteto&repo=ember-crumbly&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=poteto&repo=ember-crumbly&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
 
-{{outlet}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      {{#bread-crumbs as |component route|}}
+        {{#if route.type}}
+          <strong>{{route.title}} the {{route.type}} says <em>"{{route.says}}"</em></strong>
+        {{else}}
+          {{route.title}}
+        {{/if}}
+      {{/bread-crumbs}}
+    </div>
+    {{outlet}}
+  </div>
+</div>

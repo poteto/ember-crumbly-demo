@@ -1,0 +1,9 @@
+<ul>
+  {{#each model as |biped|}}
+    <li>
+      {{#link-to 'animal.biped.show' biped.lastName}}
+        {{biped.firstName}} {{biped.lastName}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
